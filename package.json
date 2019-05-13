@@ -1,0 +1,32 @@
+{
+  "name": "aws-utilities",
+  "version": "1.0.0",
+  "description": "Whith this library you can excecute different functions in AWS, for example invoking a lambda function, uploading file to s3, send mail with ses, validate the cognito token, etc.",
+  "main": "AwsUtilities.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jciangarotti/aws-utilities.git"
+  },
+  "keywords": [
+    "AWS",
+    "SES",
+    "S3",
+    "Lambda.",
+    "DynamoDB"
+  ],
+  "author": "Javier Ciangarotti",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jciangarotti/aws-utilities/issues"
+  },
+  "homepage": "https://github.com/jciangarotti/aws-utilities#readme",
+  "dependencies": {
+    "aws-sdk": "^2.446.0",
+    "pug": "^2.0.3",
+    "q-encoding": "^1.0.0",
+    "utf8": "^3.0.0"
+  }
+}
