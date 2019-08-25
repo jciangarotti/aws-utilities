@@ -18,9 +18,6 @@ class AwsUtilities {
         // this.s3         = new AWS.S3({
         //     apiVersion: '2006-03-01'
         // });
-        this.sns        = new AWS.SNS({
-            apiVersion: '2010-03-31'
-        });
         AWS.config.update(parameters);
         this.ddb        = new AWS.DynamoDB.DocumentClient();
 
@@ -84,14 +81,21 @@ class AwsUtilities {
         });
     };
 
-    publishToSNS (mensaje, TopicArn) {
+    /**
+     * Method to send a message to the sns arn
+     * @param {*} message 
+     * @param {*} TopicArn 
+     */
+    publishToSNS (message, TopicArn) {
         const params = {
-           Message: JSON.stringify(mensaje),
+           Message: JSON.stringify(message),
            TopicArn
         };
 
         // Create promise and SNS service object
-        var publishTextPromise = sns.publish(params).promise();
+        var publishTextPromise = new AWS.SNS({
+            apiVersion: '2010-03-31'
+        }).publish(params).promise();
         // handle promise's fulfilled/rejected states
         publishTextPromise
             .then((data) => {
