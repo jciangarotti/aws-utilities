@@ -26,8 +26,6 @@ class AwsUtilities {
             this.credentials = new AWS.SharedIniFileCredentials({profile: profile});
             AWS.config.credentials = this.credentials;
         }
-
-
     }
 
     sendSesMail (data, pugFileUrl, name, sourceMail) {
@@ -82,6 +80,37 @@ class AwsUtilities {
     };
 
     /**
+     * sendSESMailWTemplate is usefull if you have preconfigured templates in your AWS SES service. Return a promise with the AWS response. You can see more info in https://docs.aws.amazon.com/es_es/sdk-for-javascript/v2/developer-guide/ses-examples-sending-email.html
+     * @param {*} data data contains the information to send the email and call the template.
+     * 
+     */
+    sendSESMailWTemplate(data){
+      return new Promise( (resolve, reject) => {
+        // Create sendTemplatedEmail params 
+        var params = {
+          Destination: { /* required */
+            ToAddresses: [
+              data.toAddress
+            ]
+          },
+          Source: data.source, /* required */
+          Template: data.templateName, /* required */
+          TemplateData: data.templateData, /* required */
+        }
+        console.log("Email Params: ", params)
+        this.ses.sendTemplatedEmail(params, function (err, data){
+          if(err){
+            console.log("ERROR sending the email with sendTemplatedEmail function")
+            return reject(err)
+          } else {
+            console.log("The email was succesfully sending with sendTemplatedEmail", data)
+            return resolve(data)
+          }
+        })
+      })
+    }
+
+    /**
      * Method to send a message to the sns arn
      * @param {*} message 
      * @param {*} TopicArn 
@@ -104,8 +133,7 @@ class AwsUtilities {
             console.log("MessageID is " + data.MessageId);
         }).catch((err) => {
             console.error(err, err.stack);
-        });       
-       
+        });         
     };
 
     /**
@@ -148,11 +176,6 @@ class AwsUtilities {
             });
         });
     }
-
-
-
-
-
 }
 
 module.exports  = AwsUtilities;
