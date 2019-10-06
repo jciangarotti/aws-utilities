@@ -5,7 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
 
-## [V0.1.0] - 2019-09-30
+## [V0.1.2] - 2019-10-07
+### Fix 
+- Changing the function publishToSnS to Promise. ([@jciangarotti](https://github.com/jciangarotti).
+
+## [V0.1.1] - 2019-10-06
 ### Fix 
 - Shared in credential Function was deleted this was the main problem when the lib is deployed in AWS. ([@jciangarotti](https://github.com/jciangarotti).
 
