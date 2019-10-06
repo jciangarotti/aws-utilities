@@ -21,11 +21,6 @@ class AwsUtilities {
         AWS.config.update(parameters);
         this.ddb        = new AWS.DynamoDB.DocumentClient();
 
-        if(profile){
-            //To configurate and force the local profile profile.
-            this.credentials = new AWS.SharedIniFileCredentials({profile: profile});
-            AWS.config.credentials = this.credentials;
-        }
     }
 
     sendSesMail (data, pugFileUrl, name, sourceMail) {

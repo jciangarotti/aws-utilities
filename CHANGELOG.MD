@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
 
 ## [V0.1.0] - 2019-09-30
+### Fix 
+- Shared in credential Function was deleted this was the main problem when the lib is deployed in AWS. ([@jciangarotti](https://github.com/jciangarotti).
+
+
+## [V0.1.0] - 2019-09-30
 ### Added 
 - Enhancement: New function to send emails using templates in AWS SES. ([@jciangarotti](https://github.com/jciangarotti).
 
