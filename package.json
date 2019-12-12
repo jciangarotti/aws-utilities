@@ -1,6 +1,6 @@
 {
   "name": "awsu",
-  "version": "0.1.3",
+  "version": "0.2.3",
   "description": "Whith this library you can excecute different functions in AWS, for example invoking a lambda function, uploading file to s3, send mail with ses, validate the cognito token, etc.",
   "main": "AwsUtilities.js",
   "scripts": {
