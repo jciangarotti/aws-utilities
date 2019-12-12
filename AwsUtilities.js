@@ -111,7 +111,11 @@ class AwsUtilities {
       })
     })
   }
-
+  /**
+   * To update the items in dynamoDB you can read the aws documentation to fill the params. 
+   * https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/DynamoDB.html#updateItem-property
+   * @param {*} params 
+   */
   executeUpdateItems (params) {
     console.log('ENTERING TO UPDATE ITEMS FUNCTIONS')
     console.log(params)
