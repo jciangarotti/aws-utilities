@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/jciangarotti/aws-utilities#readme",
   "dependencies": {
+    "acorn": "^7.1.0",
     "aws-sdk": "^2.446.0",
     "lodash": "^4.17.15",
     "q-encoding": "^1.0.0"
