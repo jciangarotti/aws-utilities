@@ -26,8 +26,9 @@
   "dependencies": {
     "aws-sdk": "^2.446.0",
     "lodash": "^4.17.15",
-    "pug": "^2.0.3",
-    "q-encoding": "^1.0.0",
-    "utf8": "^3.0.0"
+    "q-encoding": "^1.0.0"
+  },
+  "devDependencies": {
+    "standard": "^14.3.1"
   }
 }
