@@ -120,7 +120,7 @@ class AwsUtilities {
     console.log('ENTERING TO UPDATE ITEMS FUNCTIONS')
     console.log(params)
     return new Promise((resolve, reject) => {
-      this.ddb.updateItem(params, function (err, data) {
+      this.ddb.update(params, function (err, data) {
         if (err) {
           console.log(err)
           reject(err)
